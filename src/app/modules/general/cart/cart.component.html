@@ -1,1 +1,54 @@
-<p>cart works!</p>
+<div>
+  <table class="cart">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Picture</th>
+        <th>Specification</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Modify</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>
+          {{ item.product.name }}
+        </td>
+        <td>
+          <img class="product-img" [src]="item.product.picture" />
+        </td>
+        <td>
+          <ul class="product-specification">
+            <li>
+              color: <span>{{ item.product.specifications.color }}</span>
+            </li>
+            <li>
+              weight: <span>{{ item.product.specifications.weight }}</span>
+            </li>
+            <li>
+              storage: <span>{{ item.product.specifications.storage }}</span>
+            </li>
+            <li>
+              Price: <span>{{ item.product.specifications.price }}</span>
+            </li>
+          </ul>
+        </td>
+        <td>
+          {{ item.quantity }}
+        </td>
+        <td>
+          {{ item.total }}
+        </td>
+        <td>
+          <button class="product-btn" (click)="updateCart(item.product, +1)">
+            +
+          </button>
+          <button class="product-btn" (click)="updateCart(item.product, -1)">
+            -
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

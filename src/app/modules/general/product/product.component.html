@@ -1,0 +1,35 @@
+<div class="product-list w-10">
+  <div class="product-card" *ngFor="let product of products">
+    <div class="product-card-header">
+      <img class="product-img" [src]="product.picture" alt="product" />
+      <span class="product-name">{{ product.name }}</span>
+    </div>
+    <div class="product-card-body">
+      <p>Specification</p>
+      <ul class="product-specification">
+        <li>
+          color: <span>{{ product.specifications.color }}</span>
+        </li>
+        <li>
+          weight: <span>{{ product.specifications.weight }}</span>
+        </li>
+        <li>
+          storage: <span>{{ product.specifications.storage }}</span>
+        </li>
+        <li>
+          Price: <span>{{ product.specifications.price }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="product-card-footer">
+      <button
+        class="product-btn-adt"
+        role="button"
+        id="{{ product.id }}"
+        (click)="addToCart(product)"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
