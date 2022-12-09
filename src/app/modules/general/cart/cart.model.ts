@@ -1,4 +1,4 @@
-import { Product } from 'src/app/models/Product';
+import { Product } from '../product/product.model';
 
 export class CartItrem {
   public total: number;
