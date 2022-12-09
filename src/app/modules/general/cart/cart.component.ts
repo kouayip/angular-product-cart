@@ -18,4 +18,8 @@ export class CartComponent implements OnInit {
   updateCart(product: Product, qtyImpact: number) {
     this.cartService.updateCart(product, qtyImpact);
   }
+
+  getTotal(): number {
+    return this.cartService.getTotal();
+  }
 }

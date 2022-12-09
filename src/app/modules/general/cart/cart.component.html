@@ -1,5 +1,5 @@
-<div>
-  <table class="cart">
+<div class="cart">
+  <table>
     <thead>
       <tr>
         <th>Product</th>
@@ -37,9 +37,7 @@
         <td>
           {{ item.quantity }}
         </td>
-        <td>
-          {{ item.total }}
-        </td>
+        <td>{{ item.total }}$</td>
         <td>
           <button class="product-btn" (click)="updateCart(item.product, +1)">
             +
@@ -51,4 +49,16 @@
       </tr>
     </tbody>
   </table>
+  <hr class="separator" />
+  <div class="cart-detail">
+    <h3>Your order:</h3>
+    <div *ngFor="let item of items; let index = index">
+      <p class="product-detail">
+        {{ index + 1 }}-{{ item.quantity }} {{ item.product.name }}:
+        {{ item.total }}$
+      </p>
+    </div>
+    <hr class="separator" />
+    <h4>Total={{ getTotal() }}$</h4>
+  </div>
 </div>

@@ -48,6 +48,14 @@ export class CartService {
     }
   }
 
+  getTotal(): number {
+    let sum = 0;
+    for (let i = 0; i < this.cartItems.length; i++) {
+      sum += this.cartItems[i].total;
+    }
+    return sum;
+  }
+
   getItems() {
     return this.cartItems;
   }
